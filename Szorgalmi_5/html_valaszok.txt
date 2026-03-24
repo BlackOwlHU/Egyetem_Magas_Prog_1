@@ -1,0 +1,31 @@
+1. feladat:
+
+int x = 10; --> Változó Vlad
+int* p = &x; --> Pointer Pete
+void f(int x) { x=99; } --> Xerox Chad
+void f(int& x) { x=99; } --> Key Dealer Kevin
+int* p = nullptr; --> Null Nick
+{ int n=5; } // n meghal --> Scope Sensei
+template<T> T add(T a, T b) --> Generic Greg
+return n * f(n-1); --> Recursion Rick
+
+
+2. feladat:
+
+a) Xerox Chad — érték szerinti átadás: az eredeti nem változik.
+	void valtoztat(int x) { x = 999; } int chad = 135; valtoztat(chad); // chad értéke még mindig: 135
+
+b) Pointer Pete — dereferencelés: mi lesz a kimenet?
+	int ertek = 55; int* pete = &ertek; *pete = 77; printf("%d", ertek); // kimenet: 77
+
+c) Recursion Rick — add meg a base case-t!
+	int osszeg(int n) { if (n == 0 ) return 0; // base case return n + osszeg(n - 1); } // osszeg(4) = 4+3+2+1+0 = 10
+
+
+3.feladat:
+
+a) Mi a baj? int* p = nullptr; printf("%d", *p); --> Segfault Samu
+
+b) Mi a baj? int* p = (int*)malloc(sizeof(int)); *p = 42; // ... free() soha nem hívódik --> Memory Leak Misi
+
+c) Mi a baj? int vegtelen(int n) { return vegtelen(n); // base case? } --> Stack Overflow Stan
