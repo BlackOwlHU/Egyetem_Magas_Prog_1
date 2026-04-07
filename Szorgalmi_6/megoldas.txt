@@ -1,0 +1,62 @@
+1.Feladat
+    1.Class - Osztály Olga
+    2.Instantation - Példányosító Pál
+    3.Constructor - Konstruktor Kristóf
+    4.Destructor - Destruktor Dezső
+    5.Inheritance - Öröklődő Olivér
+    6.Interface - Interfész István
+    7.Polymorphism - Polimorf Péter
+    8.Encapsulation - Bezáró Bence
+    9.Dynamic Dispatch - Late Binding Lajos
+
+2.Feladat
+
+1. class Auto { public: std::string marka; int* ev; // konstruktor (inicializálja marka-t és foglalja le az ev-et heap-en): Auto(std::string m) { marka = m; ev = new int(2024); }
+// destruktor (szabadítsa fel ev-et): ~Auto() { delete ev; } };
+
+
+2. class BankSzamla { int egyenleg = 0; // Belülről látszik, kívülről nem: private int hitelkeret = 50000; // Leszármazott is látja, kívülső nem: protected void befizet(int x);
+// Mindenki hívhatja: public };
+
+3. Allat* allatok[] = { new Kutya(), new Macska(), new Kutya() }; for (auto* a : allatok) a->hangotAd();
+// Kimenetek sorban: Vau!,Miau!,Vau!
+
+
+3.Feladat
+
+    X: Interfész István, mert csak pure virtual-t tartalmaz
+    Y: Abstrakt Anikó, mert tartalmaz közös kódot ÉS pure virtual-t
+
+4.Feladat
+
+    1.EARLY
+    2.LATE
+    3.EARLY
+    4.EARLY
+    5.LATE
+
+5.Feladat
+
+class Karakter {
+protected:
+    string nev;
+    int elet;
+
+public:
+    Karakter(string n, int e) : nev(n), elet(e) {}
+
+    virtual ~Karakter() {}
+
+    // Pure virtual → absztrakt osztály
+    virtual void tamad() = 0;
+
+    // Virtual → felüldefiniálható
+    virtual void status() {
+        cout << "Nev: " << nev << ", Elet: " << elet << endl;
+    }
+
+    // Nem virtual → közös működés
+    void sebzodik(int dmg) {
+        elet -= dmg;
+    }
+}
